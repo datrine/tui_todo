@@ -10,7 +10,7 @@
 
 - Categories view with one category selected:
 
-  ![Categories View](./assets/screenshots/categories-view.png)
+  ![Categories View](./assets/screenshots/list of categories.png)
 
 - Items view for a selected category:
 
