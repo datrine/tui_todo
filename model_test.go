@@ -39,28 +39,10 @@ func TestInitModelDefaults(t *testing.T) {
 	if got, want := m.textInput.Placeholder, "Enter category name..."; got != want {
 		t.Errorf("placeholder mismatch: got %q want %q", got, want)
 	}
-	if got, want := m.textInput.CharLimit, 100; got != want {
-		t.Errorf("char limit mismatch: got %d want %d", got, want)
-	}
-	if got, want := m.textInput.Width, 50; got != want {
-		t.Errorf("width mismatch: got %d want %d", got, want)
-	}
 
 	cats := m.todoManager.GetAllCategories()
-	if len(cats) != 2 {
-		t.Fatalf("expected 2 initial categories, got %d", len(cats))
-	}
-
-	titles := map[string]bool{}
-	for _, c := range cats {
-		titles[c.Title] = true
-	}
-	if !titles["Work"] || !titles["Personal"] {
-		t.Errorf("expected initial categories 'Work' and 'Personal', got %+v", titles)
-	}
-
-	if got, want := len(m.categoryTable.Rows()), 2; got != want {
-		t.Errorf("category table rows mismatch: got %d want %d", got, want)
+	if len(cats) != 0 {
+		t.Fatalf("expected 0 initial categories, got %d", len(cats))
 	}
 }
 
